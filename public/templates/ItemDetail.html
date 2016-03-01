@@ -1,0 +1,9 @@
+<div class="thumbnail">
+    <a href="{{item.url}}"><img ng-src="{{ item.image }}">
+        <h3>{{item.name }}</h3>
+    </a>
+    <div class="likes">{{item.likes}}<span class="glyphicon glyphicon-heart"></span>
+    </div>
+    {{ item | json }}
+</div>
+
