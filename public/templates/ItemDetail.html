@@ -1,8 +1,9 @@
 <div class="thumbnail">
-    <a href="https://www.google.com/?gws_rd=ssl#safe=off&q={{item.name}}"><img ng-src="{{ item.image }}">
-        <h3>{{item.name }}</h3>
+    <a href="https://www.google.com/?gws_rd=ssl#safe=off&q={{item.url}}"><img ng-src="{{ item.image }}">
+        <h2>{{item.name }}</h2><h3>{{item.price}} (Craigslist)</h3>
     </a>
-    <div class="likes">{{item.likes}}<span class="glyphicon glyphicon-heart"></span>
-    </div>
+    <h2 class="likes" ng-model="item.likes" ng-click="upvoteItem(item)">
+                                    {{item.likes}}<span class="glyphicon glyphicon-heart"></span>
+    </h2>
 </div>
 

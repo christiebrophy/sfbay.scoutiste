@@ -228,6 +228,8 @@ a:hover {
  position: relative;
  margin-top:2%;
  background-color: #fcfcfc;
+ padding: 2%;
+ width: 50%;
 }
 
 .thumbnail img {
