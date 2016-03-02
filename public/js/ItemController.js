@@ -9,7 +9,6 @@ ItemControllers.controller('ItemListController',
          $scope.upvoteItem = function(item) {
                 item.likes++;
                 itemData.update({itemId: item._id}, item);
-     
          };
     }
 );
@@ -20,7 +19,11 @@ ItemControllers.controller('ItemDetailController',
           $scope.sortorder = '-likes';
           $scope.reload = function() {
             $route.reload();
-        };
+          };
+          $scope.upvoteItem = function(item) {
+                item.likes++;
+                itemData.update({itemId: item._id}, item);
+          };
         }
 );
 
