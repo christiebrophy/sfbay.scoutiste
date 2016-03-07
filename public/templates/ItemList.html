@@ -1,53 +1,44 @@
-     <nav id="topNav" class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <!-- logo link
-                <a class="navbar-brand page-scroll" href="#first"><i class="ion-ios-analytics-outline"></i> Landing Zero</a>
-                -->
-            </div>
-            <div class="navbar-collapse collapse" id="bs-navbar">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <h1>#SanFrancisco</h1>
-                    </li>
-                    <li>
-                      <form name="myForm">
-                          <h3>Filter by Category:</h3>
-                            <select ng-model="query" class="form-control" data-size="14">
-                                       <option selected value="">All</option>
-                                       <option selected value="midcentury">Mid-Century</option>
-                                       <option selected value="dining_chairs">Dining Chairs</option>
-                                       <option selected value="coffee_table">Coffee Tables</option>
-                                       <option selected value="mirrors">Mirrors</option>
-                                       <option selected value="lamps">Lamps</option>
-                                       <option selected value="side_tables">Side Tables</option>
-                                       <option value="sofas">Sofas</option>
-                                       <option selected value="outdoor_furniture">Outdoor Furniture</option>
-                                       <option selected value="dressers">Dressers</option>
-                                       <option selected value="desks">Desks</option>
-                                       <option selected value="rattan">Rattan</option>
-                                       <option selected value="lounge_chairs">Lounge Chairs</option>
-                                       <option selected value="chinoiserie">Chinoiserie</option>
-                            </select>
-                      </form>
-                    </li>
+<div class="navbar navbar-inverse navbar-fixed-top">
+   <div class="container">
+      <div class="navbar-header">
+         <a class="navbar-brand hidden-xs" href=""><img src="https://s3-us-west-2.amazonaws.com/christiebrophy-scoutiste/scoutiste_logo.png"></a>
+         <a class="navbar-brand visible-xs" href=""><img src="https://s3-us-west-2.amazonaws.com/christiebrophy-scoutiste/scoutiste_logo-xs.png"></a>
+            <form name="myForm" class="navbar-form">
+                                <select ng-model="query" class="form-control" data-size="14">
+                                           <option selected value="">BROWSE</option>
+                                           <option selected value="">All</option>
+                                           <option selected value="midcentury">Mid-Century</option>
+                                           <option selected value="dining_chairs">Dining Chairs</option>
+                                           <option selected value="coffee_table">Coffee Tables</option>
+                                           <option selected value="mirrors">Mirrors</option>
+                                           <option selected value="lamps">Lamps</option>
+                                           <option selected value="side_tables">Side Tables</option>
+                                           <option value="sofas">Sofas</option>
+                                           <option selected value="outdoor_furniture">Outdoor Furniture</option>
+                                           <option selected value="dressers">Dressers</option>
+                                           <option selected value="desks">Desks</option>
+                                           <option selected value="rattan">Rattan</option>
+                                           <option selected value="lounge_chairs">Lounge Chairs</option>
+                                           <option selected value="chinoiserie">Chinoiserie</option>
+                                </select>
+                </form>
+      </div>
+      
+   </div>
+</div>
+                      
                     
-                </ul>
-            </div>
-        </div>
-    </nav>
+                   
+                        <div class="search-form"><label>Search: <input ng-model="searchText"></label></div>
+                    
+               
+    
 
 
     <div class="container">
         <div class="main">
             <div id="grid" data columns>
-                        <div class="column" ng-repeat="item in items | orderBy:sortorder | filter:query">
+                        <div class="column" ng-repeat="item in items | orderBy:sortorder | filter:query | filter:searchText">
                             
                                 <a href= "#/items/{{item._id}}">
                                        <img ng-src="{{item.image}}" >
