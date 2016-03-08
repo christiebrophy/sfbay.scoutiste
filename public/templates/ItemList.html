@@ -10,16 +10,17 @@
                                            <option selected value="midcentury">Mid-Century</option>
                                            <option selected value="dining_chairs">Dining Chairs</option>
                                            <option selected value="coffee_table">Coffee Tables</option>
+                                           <option selected value="lounge_chairs">Lounge Chairs</option>
+                                           <option selected value="dressers">Dressers</option>
                                            <option selected value="mirrors">Mirrors</option>
                                            <option selected value="lamps">Lamps</option>
                                            <option selected value="side_tables">Side Tables</option>
                                            <option value="sofas">Sofas</option>
                                            <option selected value="outdoor_furniture">Outdoor Furniture</option>
-                                           <option selected value="dressers">Dressers</option>
                                            <option selected value="desks">Desks</option>
                                            <option selected value="rattan">Rattan</option>
-                                           <option selected value="lounge_chairs">Lounge Chairs</option>
                                            <option selected value="chinoiserie">Chinoiserie</option>
+                                           <option selected value="Miscellaneous">Miscellaneous</option>
                                 </select>
                 </form>
       </div>
@@ -44,8 +45,9 @@
                                        <img ng-src="{{item.image}}" >
                                 </a>
                                     <h2 class="likes" ng-model="item.likes" ng-click="upvoteItem(item)">
-                                    {{item.likes}}<span class="glyphicon glyphicon-heart"></span>
+                                    {{item.likes}}<span class="glyphicon glyphicon-heart"></span><span class="price">{{item.price}}</span>
                                     </h2>
+
                         
                             
                             

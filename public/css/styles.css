@@ -89,6 +89,7 @@ body, html {
     margin: 2%;
     padding: 1% 1% 1% 1%;
     background-color: #fefefe;
+    position: relative;
 }
 .size-1of1 { 
     width: 100%;
@@ -145,7 +146,11 @@ a:hover {
  margin-bottom:5%;
 }
 
-
+.price {
+    margin-right:5px;
+    position:absolute;
+    right: 5px;
+}
 
 
 .footer {
