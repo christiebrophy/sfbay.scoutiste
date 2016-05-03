@@ -3,7 +3,9 @@
 var itemsApp = angular.module('itemsApp', [
   'ngRoute',
   'ItemControllers',
-  'ItemServices'
+  'ItemServices',
+  'ContactPage',
+  'ngValidate',
 ]);
 
 itemsApp.config(['$routeProvider',
@@ -18,6 +20,16 @@ itemsApp.config(['$routeProvider',
              
                 templateUrl: 'templates/ItemDetail.html',
                 controller: 'ItemDetailController'
+            }).
+            when('/about', {
+             
+                templateUrl: 'templates/about.html'
+            }).
+             when('/contact', {
+             
+                templateUrl: 'templates/contact.html',
+                controller: 'ContactController',
+                controllerAs: 'vm'
             }).
             otherwise({ 
                 redirectTo: '/items' 

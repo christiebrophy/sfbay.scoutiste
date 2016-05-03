@@ -6,6 +6,9 @@ var session = require('express-session');
 var mongoose = require('mongoose');
 var mongodb = require('mongodb');
 
+var http = require('http'); 
+var nodemailer = require('nodemailer');
+
 var app = express();
 
 var port = process.env.PORT || 5000;
@@ -29,6 +32,35 @@ app.use(session({secret: 'library'}));
 app.use('/items', itemRouter);
 app.use('/auth', authRouter);
 app.use('/users', userRouter);
+
+
+var transporter = nodemailer.createTransport({
+        service: 'Gmail',
+        auth: {
+            user: 'christie.brophy@gmail.com', // Your email id
+            pass: 'DECUR82012' // Your password
+        }
+});
+
+app.post('/email', function(req, res) {
+    var mailOptions = {
+        from: req.body.from, // sender address
+        to: 'christie.brophy@gmail.com', // list of receivers 
+        subject: 'Website email from ' + req.body.subject, // Subject line
+        text: 'Email and Message: ' + req.body.from + '\nMessage: ' + req.body.text // plaintext
+        // html: '<b>Hello world ✔</b>' // You can choose to send an HTML body instead
+    };
+    
+    transporter.sendMail(mailOptions, function(error, info){
+        if(error){
+            console.log(error);
+            res.json({yo: 'error'});
+        }else{
+            console.log('Message sent: ' + info.response);
+            res.json({yo: info.response});
+        }
+    });
+});
 
 
 
